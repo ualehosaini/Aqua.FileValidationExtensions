@@ -40,5 +40,20 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         public static bool IsHidden(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Hidden) != 0;
 
+        /// <summary>
+        /// Validate the file if a Read Only file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsReadOnly(this string fileFullPath)
+        {
+            if (fileFullPath.IsValidFile())
+            {
+                var fileInfo = new FileInfo(fileFullPath);
+                return (fileInfo.Attributes & FileAttributes.ReadOnly) != 0;
+            }
+            return false;
+        }
+
     }
 }
