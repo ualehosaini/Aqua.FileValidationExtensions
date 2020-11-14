@@ -33,6 +33,12 @@ namespace Aqua.FileValidationExtensions
             return false;
         }
 
+        /// <summary>
+        /// Validate the file if a Hidden file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsReadOnly(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Hidden) != 0;
 
     }
 }
