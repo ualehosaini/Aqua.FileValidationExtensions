@@ -77,5 +77,12 @@ namespace Aqua.FileValidationExtensions
             return false;
         }
 
+        /// <summary>
+        /// Validate the file if an Operating System file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsOperatingSystemFile(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.System) != 0;
+
     }
 }
