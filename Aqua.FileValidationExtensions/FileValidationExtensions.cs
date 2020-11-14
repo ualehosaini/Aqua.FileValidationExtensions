@@ -23,7 +23,7 @@ namespace Aqua.FileValidationExtensions
         /// </summary>
         /// <param name="fileFullPath"></param>
         /// <returns></returns>
-        public static bool IsReadOnly(this string fileFullPath)
+        public static bool IsHidden(this string fileFullPath)
         {
             if (fileFullPath.IsValidFile())
             {
@@ -38,7 +38,7 @@ namespace Aqua.FileValidationExtensions
         /// </summary>
         /// <param name="fileFullPath"></param>
         /// <returns></returns>
-        public static bool IsReadOnly(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Hidden) != 0;
+        public static bool IsHidden(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Hidden) != 0;
 
     }
 }
