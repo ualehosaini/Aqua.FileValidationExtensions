@@ -18,7 +18,20 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         public static bool IsValidFile(this string fileFullPath) => fileFullPath.IsNullOrEmptyOrWhiteSpace() && File.Exists(fileFullPath);
 
-
+        /// <summary>
+        /// Validate the file if a Hidden file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsReadOnly(this string fileFullPath)
+        {
+            if (fileFullPath.IsValidFile())
+            {
+                var fileInfo = new FileInfo(fileFullPath);
+                return (fileInfo.Attributes & FileAttributes.Hidden) != 0;
+            }
+            return false;
+        }
 
 
     }
