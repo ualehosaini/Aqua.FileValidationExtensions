@@ -126,10 +126,7 @@ namespace Aqua.FileValidationExtensions
         /// </summary>
         /// <param name="fileFullPath"></param>
         /// <returns></returns>
-        public static bool IsEncrypted(this FileInfo fileFullPath)
-        {
-            return (fileFullPath.Attributes & FileAttributes.Temporary) != 0;
-        }
+        public static bool IsEncrypted(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Temporary) != 0;
 
     }
 }
