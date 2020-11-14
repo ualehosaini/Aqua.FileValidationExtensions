@@ -62,5 +62,20 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         public static bool IsReadOnly(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.ReadOnly) != 0;
 
+        /// <summary>
+        /// Validate the file if an Operating System file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsOperatingSystemFile(this string fileFullPath)
+        {
+            if (fileFullPath.IsValidFile())
+            {
+                var fileInfo = new FileInfo(fileFullPath);
+                return (fileInfo.Attributes & FileAttributes.System) != 0;
+            }
+            return false;
+        }
+
     }
 }
