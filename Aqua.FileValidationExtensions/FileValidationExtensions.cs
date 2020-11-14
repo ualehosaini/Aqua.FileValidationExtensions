@@ -106,5 +106,20 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         public static bool IsTemporaryFile(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Temporary) != 0;
 
+        /// <summary>
+        /// Validate the file if an encrypted file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsEncrypted(this string fileFullPath)
+        {
+            if (fileFullPath.IsValidFile())
+            {
+                var fileInfo = new FileInfo(fileFullPath);
+                return (fileInfo.Attributes & FileAttributes.Temporary) != 0;
+            }
+            return false;
+        }
+
     }
 }
