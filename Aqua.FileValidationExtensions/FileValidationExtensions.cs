@@ -99,5 +99,12 @@ namespace Aqua.FileValidationExtensions
             return false;
         }
 
+        /// <summary>
+        /// Validate the file if a Temporary file
+        /// </summary>
+        /// <param name="fileFullPath"></param>
+        /// <returns></returns>
+        public static bool IsTemporaryFile(this FileInfo fileFullPath) => (fileFullPath.Attributes & FileAttributes.Temporary) != 0;
+
     }
 }
