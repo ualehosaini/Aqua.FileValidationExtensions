@@ -20,7 +20,7 @@ namespace Aqua.FileValidationExtensions
         }
 
         /// <summary>
-        /// Validate the file is exists
+        /// Validate the file is exists or not 
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
