@@ -26,7 +26,12 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         public static bool IsValidFile(this string fileFullPath)
         {
-            return fileFullPath.IsNullOrEmptyOrWhiteSpace() && File.Exists(fileFullPath);
+            var result = false;
+            if (fileFullPath.IsNullOrEmptyOrWhiteSpace() && File.Exists(fileFullPath))
+            {
+                result = true;
+            }
+            return result;
         }
 
         /// <summary>
