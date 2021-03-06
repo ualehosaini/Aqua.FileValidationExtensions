@@ -11,7 +11,12 @@ namespace Aqua.FileValidationExtensions
         /// <returns></returns>
         private static bool IsNullOrEmptyOrWhiteSpace(this string input)
         {
-            return string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input);
+            var result = false;
+
+            if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input))
+                result = true;
+
+            return result;
         }
 
         /// <summary>
