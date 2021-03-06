@@ -5,7 +5,7 @@ namespace Aqua.FileValidationExtensions
     public static class FileValidationExtensions
     {
         /// <summary>
-        /// Validate the input string is not Empty
+        /// Validate the string if it is byll or Empty
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
