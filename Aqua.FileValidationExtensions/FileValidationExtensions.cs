@@ -9,7 +9,10 @@ namespace Aqua.FileValidationExtensions
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        private static bool IsNullOrEmptyOrWhiteSpace(this string input) => string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input);
+        private static bool IsNullOrEmptyOrWhiteSpace(this string input)
+        {
+            return string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input);
+        }
 
         /// <summary>
         /// Validate the file is exists
